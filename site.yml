@@ -1,0 +1,12 @@
+- name: Enviar mensagem no Telegram
+  hosts: all
+  tasks:
+    - name: Enviar mensagem para o chat
+      uri:
+        url: "https://api.telegram.org/bot{{ telegram_bot_token }}/sendMessage"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+        body_format: raw
+        body: "{{ {'chat_id': chat_id, 'text': message_text} | to_json }}"
+        return_content: yes
