@@ -1,6 +1,6 @@
 all:
   hosts:
-    10.0.0.1:
+    10.0.0.1: # ip public de uma máquina  virtual ou se preferir user o  localhost
   vars:
     ansible_ssh_user: 'root' 
     ansible_ssh_private_key_file: "/home/root/ansible/key.pem" #caminho para sua chave de acesso ssh 
